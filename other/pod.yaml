@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-webapp
+spec:
+  containers:
+    - name: my-webapp
+      image: rajendrait99/web:latest

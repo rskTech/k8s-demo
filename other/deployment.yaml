@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-exporter
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-exporter
+    spec:
+      containers:
+        - name: my-exporter
+          imagePullPolicy: Never
+          image: kafka-topic-exporter:1.2.2
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config/conf.yaml
+      volumes:
+        - name: config-volume
+          hostPath:
+            path: /home/sterlite/demo/conf.yaml

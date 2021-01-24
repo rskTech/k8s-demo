@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myingress
+spec:
+  backend:
+    serviceName: my-exporter
+    servicePort: 8080
